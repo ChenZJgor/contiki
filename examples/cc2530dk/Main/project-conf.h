@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011, George Oikonomou - <oikonomou@users.sourceforge.net>
+ * Copyright (c) 2010, Loughborough University - Computer Science
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -27,33 +27,27 @@
  * SUCH DAMAGE.
  *
  * This file is part of the Contiki operating system.
+ *
+ * $Id$
  */
 
 /**
  * \file
- *         Data structures for SmartRF05EB sensing elements
+ *         Project specific configuration defines for the rpl topology display
+ *         example.
  *
  * \author
- *         George Oikonomou - <oikonomou@users.sourceforge.net>
+ *         YoCiHou - < www.iotdev.net >
  */
 
-#include "dev/button-sensor.h"
-#include "dev/adc-sensor.h"
-#include "sys/energest.h"
+#ifndef PROJECT_CONF_H_
+#define PROJECT_CONF_H_
 
-const struct sensors_sensor *sensors[] = {
-#if ADC_SENSOR_ON
-  &adc_sensor,
-#endif
-#if BUTTON_SENSOR_ON
-  &button_1_sensor,
+#define UART0_CONF_WITH_INPUT 1
+#define UART1_CONF_WITH_INPUT 1
+#define BUTTON_SENSOR_CONF_ON 1
 
-  &button_2_sensor,
-  
-  &button_3_sensor,
+#define UIP_CONF_IPV6     1
+#define UIP_CONF_IPV6_RPL 1
 
-#endif
-	0
-};
-
-unsigned char sensors_flags[(sizeof(sensors) / sizeof(struct sensors_sensor *))];
+#endif /* PROJECT_CONF_H_ */

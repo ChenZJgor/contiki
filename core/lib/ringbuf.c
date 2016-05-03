@@ -79,7 +79,7 @@ ringbuf_put(struct ringbuf *r, uint8_t c)
 int
 ringbuf_get(struct ringbuf *r)
 {
-  uint8_t c;
+  int c;
   
   /* Check if there are bytes in the buffer. If so, we return the
      first one and increase the pointer. If there are no bytes left, we
